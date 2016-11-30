@@ -11,11 +11,14 @@ class Appender {
 
     start(replication) {
         this.replication = replication;
-        this.previousTime = Date.now();
+        this.previousTime = process.hrtime();
     }
 
     end(search) {
-        this.time = Date.now() - this.previousTime;
+        let timeProcess = process.hrtime( this.previousTime );
+        let seconds = timeProcess[0];
+        let nano = timeProcess[1];
+        this.time = seconds * 1000 + nano * 0.000001;
         this.lines.push(
             {
                 name: search.Name,
