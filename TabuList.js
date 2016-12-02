@@ -28,6 +28,7 @@ class TabuList {
     calcNrIterations(){
         let nrTasks = this.search.nrTasks;
         let param = Math.ceil((Math.random() + 0.000001) * 9) / 100;
+        this.search.parametro = param;
         let nrIterations =  param * nrTasks;
         return  Math.ceil( nrIterations );
     }

@@ -25,7 +25,7 @@ class Appender {
                 time: this.time,
                 iterations: search.iterations, 
                 valor: search.makespanMachine.time, 
-                parametro: "NA" 
+                parametro: search.parametro
             }
         );
     }
