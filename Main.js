@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 let FirstImproveSearch = require("./FirstImproveSearch");
 let TabuSearch = require("./TabuSearch");
@@ -10,7 +10,7 @@ let firstImproveSearch = new FirstImproveSearch(new Preparator(), appender);
 let tabuSearch = new TabuSearch(new Preparator(), appender);
  
 let searchs = [firstImproveSearch, tabuSearch];
-let nrMachines = [10, 20, 50];
+let nrMachines = [10, 20, 50,100];
 // let nrMachines = [2, 4, 8];
 let expoentesR = [1.5, 2.0];
 let nrExecutions = 10;

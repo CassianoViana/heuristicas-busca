@@ -15,10 +15,7 @@ class Appender {
     }
 
     end(search) {
-        let timeProcess = process.hrtime( this.previousTime );
-        let seconds = timeProcess[0];
-        let nano = timeProcess[1];
-        this.time = seconds * 1000 + nano * 0.000001;
+        this.computesTime();
         this.lines.push(
             {
                 name: search.Name,
@@ -32,7 +29,14 @@ class Appender {
             }
         );
     }
-
+    
+    computesTime(){
+        let timeProcess = process.hrtime( this.previousTime );
+        let seconds = timeProcess[0];
+        let nano = timeProcess[1];
+        this.time = seconds * 1000 + nano * 0.000001;
+    }
+    
     log(){
         var stream = fs.createWriteStream("log.txt");
         let lines = this.lines;

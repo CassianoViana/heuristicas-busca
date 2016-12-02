@@ -7,6 +7,7 @@ class FirstImproveSearch extends LocalSearch {
 
     search() {
         do {
+            this.iterations ++;
             this.makespanMachine = super.findMakespanMachine();
         } while (this.findTaskAndMove());
     }
@@ -22,7 +23,6 @@ class FirstImproveSearch extends LocalSearch {
     moveTaskToOtherMachine(taskMove){
         for(let j = 0; j < this.machines.length; j++){
             let machine = this.machines[j];
-            this.iterations ++;
             if(machine == this.makespanMachine)
                 continue;
 
